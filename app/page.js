@@ -1,69 +1,65 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Caipo from '@/components/sections/Caipo';
+import Challenge from '@/components/sections/Challenge';
+import ComingSoon from '@/components/sections/ComingSoon';
+import Dashboards from '@/components/sections/Dashboards';
+import DeviceFlow from '@/components/sections/DeviceFlow';
+import FloBrain from '@/components/sections/FloBrain';
+import Hero from '@/components/sections/Hero';
+import HowItWorks from '@/components/sections/HowItWorks';
+import MoodChanger from '@/components/sections/MoodChanger';
+import Pricing from '@/components/sections/Pricing';
+import StickySteps from '@/components/sections/StickySteps';
+import Solution from '@/components/sections/Solution';
+import SystemModels from '@/components/sections/SystemModels';
+import Tier1 from '@/components/sections/Tier1';
+import Tier1Deliverables from '@/components/sections/Tier1Deliverables';
+import Tier2 from '@/components/sections/Tier2';
+import Tier3 from '@/components/sections/Tier3';
+import TierCompare from '@/components/sections/TierCompare';
+import WhatIsApi from '@/components/sections/WhatIsApi';
+import Why from '@/components/sections/Why';
+import { stepsWith, stepsWithout } from '@/lib/content';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.js</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main style={{ paddingTop: 63 }}>
+      <Hero />
+      <MoodChanger />
+      <FloBrain />
+      <WhatIsApi />
+      <SystemModels />
+      <Challenge />
+      <Solution />
+      <HowItWorks />
+      <Tier1 />
+      <Tier1Deliverables />
+      <StickySteps
+        id="how-without"
+        screenLabel="How It Works Without Wearables"
+        titleLead="How It Works"
+        titleHighlight="Without Wearables"
+        image="/images/how-without-wearables.jpg"
+        imageAlt="Athlete self-reflection and readiness"
+        steps={stepsWithout}
+      />
+      <Tier2 />
+      <DeviceFlow />
+      <Dashboards />
+      <StickySteps
+        id="how-with"
+        screenLabel="How It Works With Wearable"
+        titleLead="How It Works"
+        titleHighlight="With Wearables"
+        image="/images/how-with-wearables.jpg"
+        imageAlt="Athlete in action"
+        steps={stepsWith}
+      />
+      <Tier3 />
+      <TierCompare />
+      <Pricing />
+      <Caipo />
+      <ComingSoon />
+      <Why />
+    </main>
   );
 }
